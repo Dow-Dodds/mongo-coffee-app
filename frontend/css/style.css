@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    margin-bottom: 2rem;
+    color: #FFFFF2;
+
+}
+
+h2, h3, h4, h5, h6{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+p, a, label, button {
+    font-family: Helvetica, arial, sans-serif;
+}
+
+body {
+    background-color: tomato;
+    padding: 4rem;
+}
+
+#add-coffee {
+    border: 2px solid white;
+    padding: 1rem;
+    background-color: white;
+   margin: 2rem;
+
+}
+
+#result {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+}
+
+#result img {
+    width: 100%;
+}

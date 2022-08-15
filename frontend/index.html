@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Full Stack App</title>
+</head>
+    <body>
+        <h1>Coffee Ordering App</h1>
+        <!-- forms are a way to wrap inputs  -->
+        <div id="tools">
+          <!-- this void thing makes the code ignore php and follow javascript 
+          if we dont do this the page will refresh the page  -->
+            <form id="add-coffee-form" action="javascript:void(0)">
+                <label for="name-input">Name:</label>
+                <input id="name-input" name="name-input" type="text">
+
+                <label for="price-input">Price: </label>
+                <input id="price-input" name="price-input" type="number">
+
+                <label for="image-input">Image Url: </label>
+                <input id="image-input" name="image-input" type="text">
+
+                <button id="add-coffee">go</button>
+
+
+            </form> 
+
+        </div>
+
+
+        <div id="result">
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+       <script src="js/script.js"></script> 
+    </body>
+</html>
