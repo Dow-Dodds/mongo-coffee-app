@@ -13,6 +13,21 @@ const imageURLInput = document.getElementById("image-input");
 //     image_url: "https://www.breville.com/content/dam/coffeehub/language-masters/en/recipes/recipe-hero-stills/Recipes_Banner12_1200x1200_LongBlack.jpeg"
 // }
 
+let showAllCoffee = () => {
+    $.ajax({
+        type: 'GET', 
+        url: "http://localhost:3100/allCoffee",
+        //your success function contains an object which can be names anything 
+        success: (coffees) => {
+            console.log(coffees)
+            renderCoffees(coffees);
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    })
+}
+
 go.onclick = () => {
     console.log("clicked");
     $.ajax({
@@ -28,36 +43,51 @@ go.onclick = () => {
         },
         success: () => {
             console.log("A new coffee was added")
+            showAllCoffee();
         },
         error: () => {
             console.log("No workey")
         }
     })
 }
+//this function will handle all our deletes 
+let collectDeleteButtons = () => {
+
+    let deleteButtonsArray = document.getElementsByClassName("delete-button");
+    console.log(deleteButtonsArray);
+}
+
+
+// show all the coffees using the data from the backend
 
 let renderCoffees = (coffees) => {
     console.log("The render coffee function us working")
-
+     result.innerHTML = "";
     coffees.forEach((item) =>{
+     
         result.innerHTML += `
-        <div>
+        <div id="${item._id}">
             <img src="${item.image_url}" alt "${item.name}">
             <h3>${item.name}</h3>
             <p>$${item.price}</p>
+            <button class="delete-button">Delete</button>
         </div>
         `
+        collectDeleteButtons();
     })
+    //all coffees should be rendered now and we can collect the delete buttons 
 }
+showAllCoffee();
 
-$.ajax({
-    type: 'GET', 
-    url: "http://localhost:3100/allCoffee",
-    //your success function contains an object which can be names anything 
-    success: (coffees) => {
-        console.log(coffees)
-        renderCoffees(coffees);
-    },
-    error: (error) => {
-        console.log(error);
-    }
-})
+// $.ajax({
+//     type: 'GET', 
+//     url: "http://localhost:3100/allCoffee",
+//     //your success function contains an object which can be names anything 
+//     success: (coffees) => {
+//         console.log(coffees)
+//         renderCoffees(coffees);
+//     },
+//     error: (error) => {
+//         console.log(error);
+//     }
+// })
