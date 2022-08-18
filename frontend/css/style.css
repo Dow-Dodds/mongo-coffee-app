@@ -13,41 +13,107 @@ h1 {
 
 h2, h3, h4, h5, h6{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    color: #FFFFF2;
 }
 
-p, a, label, button {
+p, a, label{
     font-family: Helvetica, arial, sans-serif;
+    color: #FFFFF2;
 }
 
 body {
-    background-color: tomato;
+    background-color: tomato!important;
     padding: 4rem;
 }
 
 #add-coffee {
-    border: 2px solid white;
-    padding: 1rem;
-    background-color: white;
-   margin: 2rem;
+  
+   margin: 0 0 2rem 2rem;
 
 }
 button {
 
-  border: 2px solid white;
+  border: 2px solid pink !important;
     padding: .5rem;
-    background-color: white;
+    background-color: pink !important;
+     color: black!important;
     margin: .5rem 0 .5rem 0;
-
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.53);
 }
 
 #result {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 20px;
 
 }
 
 #result img {
     width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.53);
+-webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.53);
+-moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.53);
+margin-bottom: 1rem;
+}
+
+#productForm {
+    margin: 2rem 0 2rem 0;
+    background-color: pink;
+    width: fit-content;
+    padding: 2rem;
+    border: 2px solid white;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.53);
+   
+}
+
+#productForm  h2 {
+    margin-bottom: 2rem;
+    
+}
+
+#product-wrapper {
+    height: 26rem;
+
+    position: relative;
+}
+.modal-content {
+    background-color: tomato!important;
+}
+.fa-pen-to-square {
+    margin-left: 2rem;
+    color: white;
+    font-size: 20px;
+}
+.fa-pen-to-square:hover{
+    cursor: pointer;
+    color: pink;
+}
+
+.fa-trash-can {
+    color: white;
+    font-size: 20px;
+}
+
+.fa-trash-can:hover{
+    cursor: pointer;
+    color: pink;
+}
+
+.modal-body #coffee-logo {
+    width: 100%;
+    object-fit: cover;
+    object-position:top;
+    max-height: 16rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-body #coffee-logo:hover{
+    width: 80%;
 }

@@ -3,3 +3,5 @@
 ```
 npm run app 
 ```
+
+- Rename the config-example.json file to config.json, and add yourMongoDB
