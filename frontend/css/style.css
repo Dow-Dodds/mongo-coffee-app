@@ -78,7 +78,7 @@ margin-bottom: 1rem;
     
 }
 
-#product-wrapper {
+.product-wrapper {
     height: 26rem;
 
     position: relative;
@@ -116,4 +116,53 @@ margin-bottom: 1rem;
 
 .modal-body #coffee-logo:hover{
     width: 80%;
+}
+
+nav {
+    padding: 2rem;
+    background-color: pink;
+    color: black;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav a {
+    text-decoration: none;
+    margin-right: 2rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: white;
+}
+
+nav a:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+
+#dp {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-size: cover;
+
+}
+
+#user-details{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    margin-left: 40%;
+}
+
+#image-preview img {
+    width:100%;
 }

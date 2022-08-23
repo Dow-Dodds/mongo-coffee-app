@@ -18,6 +18,7 @@ const config = require('./config.json');
 // every schema needs a capital letter
 const Coffee = require('./models/coffee.js');
 const User = require('./models/user.js');
+const Review = require('./models/review.js');
 //console.log(Coffee);
 
 // Start our dependencies
@@ -151,7 +152,7 @@ app.patch('/updateProduct/:id', (req, res) => {
 
 app.post('/registerUser',(req, res)=>{ // Checking if user is in the DB already
   
-    User.findOne({username:req.body.username}, (err, userResult)=>{
+    User.findOne({username:req.body.username}, (err, userResult)=> {
   
       if(userResult){
         // send back a string so we can validate the user
@@ -182,8 +183,10 @@ app.post('/registerUser',(req, res)=>{ // Checking if user is in the DB already
     User.findOne({username:req.body.username}, (err, userResult) => {
       if (userResult){
         if(bcrypt.compareSync(req.body.password, userResult.password)){
+          //success
           res.send(userResult);
         } else{
+          //errror
           res.send('not authorised');
         } // inner if
       } else{
@@ -192,3 +195,18 @@ app.post('/registerUser',(req, res)=>{ // Checking if user is in the DB already
     }) // Find one ends
   }); // end of post login
   
+  
+
+  //editing coffee via bootstrap madal 
+  //the :id is a special syntax that can grab the id from a variable in the frontend 
+  app.get('/coffee/:id', (req, res) => {
+    const coffeeId = req.params.id 
+    console.log(coffeeId)
+    Coffee.findById(coffeeId, (err, coffee) => {
+      if(err) {
+        console.log(err);
+      }else {
+        res.send(coffee);
+      }
+    })
+  })

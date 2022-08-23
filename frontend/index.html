@@ -19,6 +19,12 @@
 
 </head>
     <body>
+      <nav>
+        <a href="index.html">Home</a>
+        <!-- <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a> -->
+        <div id="user-details"></div> 
+      </nav>
         <h1>Coffee Ordering App</h1>
         <h2>Dashboard</h2>
         <!-- forms are a way to wrap inputs  -->
@@ -50,8 +56,8 @@
         <!-- Button trigger modal -->
       
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Edit Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
@@ -59,12 +65,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <img  id="coffee-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaIkK_NQJ6dQXiLzqhuNoX-V16o1MsG9V8ow&usqp=CAU">
+                <div id="image-preview"></div>
                 <div id="productForm"> 
                   <h2>Update Form </h2>
-                  <label for="productID">Enter Product Id</label>
+                  <!-- <label for="productID">Enter Product Id</label>
                   <input type="text" name="inputID" id="productID">
-                  <br></br>
+                  <br></br> -->
         
                   <label for="productName">Enter name of the product</label>
                   <input type="text" id="productName" name="productName">
@@ -86,6 +92,30 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button id="updateProduct" name="productButton" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Update Product</button>
 
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Review Modal -->
+         <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">New Review</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              
+                <div id="productForm"> 
+        
+                  <label for="productReview">Enter your review:</label>
+                  <textarea class="form-control" id="productReview" rows="4"></textarea>
+                  <br></br>    
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="submitReview" name="submitReviewButton" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit Review</button>
               </div>
             </div>
           </div>
